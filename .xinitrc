@@ -65,4 +65,4 @@ get_session(){
 
 #exec $(get_session)
 exec i3
-
+xset s off && xset -dpms
