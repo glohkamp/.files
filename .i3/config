@@ -8,15 +8,15 @@ set $mod Mod4
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
-default_floating_border normal
+default_border pixel 2
+default_floating_border none
 
 # Hide borders
 hide_edge_borders none
 
 # change borders
 bindsym $mod+u border none
-bindsym $mod+y border pixel 1
+bindsym $mod+y border pixel 2
 bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -68,6 +68,8 @@ bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+d exec discord
 bindsym $mod+c exec chromium
+bindsym $mod+g exec lutris
+bindsym $mod+s exec steam
 
 # focus_follows_mouse no
 
@@ -95,11 +97,6 @@ bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -236,6 +233,7 @@ mode "resize" {
 bindsym Mod1+Escape exec --no-startup-id blurlock
 
 # Autostart applications
+exec --no-startup-id /usr/bin/nvidia-settings --assign=CurrentMetaMode="1920x1080_144"
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b ; conky --config=/usr/share/conky/conky.conf
 exec --no-startup-id nm-applet
@@ -249,6 +247,8 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 #exec_always "setxkbmap -option caps:numlock"
 exec --no-startup-id /usr/bin/nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
+exec --no-startup-id /usr/bin/xset s off
+exec --no-startup-id /usr/bin/xset -dpms
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -296,9 +296,9 @@ bar {
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+  client.focused          #ff00ff #ff00ff #80FFF9 #FDF6E3
+  client.focused_inactive #990099 #990099 #1ABC9C #454948
+  client.unfocused        #4d004d #4d004d #1ABC9C #454948
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
   client.placeholder      #000000 #0c0c0c #ffffff #000000 
 
