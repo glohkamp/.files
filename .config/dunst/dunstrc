@@ -69,6 +69,10 @@
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
     geometry = "0x0-25-25"
+
+    #CORNER RADIUS
+    #use 0 for non round corners
+    corner_radius = 5
     
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
