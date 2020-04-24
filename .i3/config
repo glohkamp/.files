@@ -180,7 +180,6 @@ for_window [title="MuseScore: Play Panel"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
-#for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
@@ -241,13 +240,8 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b ; conky --config=/u
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
-#exec --no-startup-id ~/.i3/capstonum.sh
-#exec --no-startup-id conky --config=/usr/share/conky/conky.conf
-#exec --no-startup-id xautolock -locknow -locker blurlock
-#exec --no-startup-id blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-#exec_always "setxkbmap -option caps:numlock"
 exec --no-startup-id /usr/bin/nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
 exec --no-startup-id /usr/bin/xset s off
 exec --no-startup-id /usr/bin/xset -dpms
@@ -286,7 +280,6 @@ set_from_resource $term_color15    color15
 #Disable System Tray
 bar {
 	mode invisible
-	#tray_output none
 	workspace_buttons no
 	i3bar_command i3bar --transparency
 	colors {
