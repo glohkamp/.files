@@ -1,5 +1,5 @@
 [global]
-    frame_width = 1
+    frame_width = 2
     frame_color = "#ffffff"
     
     font = TerminessTTF Nerd Font Mono Medium 15
@@ -72,7 +72,7 @@
 
     #CORNER RADIUS
     #use 0 for non round corners
-    corner_radius = 5
+    corner_radius = 3
     
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
@@ -186,12 +186,12 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#006080"
-    foreground = "#006080"
+    foreground = "#ffffff"
     timeout = 5
 
 [urgency_normal]
     background = "#006080"
-    foreground = "#006080"
+    foreground = "#ffffff"
     timeout = 5
 
 [urgency_critical]
