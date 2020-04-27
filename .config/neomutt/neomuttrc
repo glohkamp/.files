@@ -1,0 +1,26 @@
+#set ssl_starttls=yes
+#set ssl_force_tls=yes
+set smtp_url = "smtp://glohkamp@gmail.com@smtp.gmail.com:587"
+set imap_user = 'glohkamp@gmail.com'
+set from = 'glohkamp@gmail.com'
+set realname= 'Gary'
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+
+#cache
+set header_cache = "~/.config/neomutt/cache/headers"
+#set message_cachedir = "~/.mutt/cache/bodies"
+#set certificate_file = "~/.mutt/certificates"
+
+set move = no
+set imap_keepalive = 90
+
+#plain text > html
+alternative_order multipart/mixed multipart/related text/plain
+
+set editor = "nano"
+
+# Make the foreground color of messages black and their
+# background the same color as the terminal background
+color normal default default
