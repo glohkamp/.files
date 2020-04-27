@@ -1,6 +1,6 @@
 [global]
     frame_width = 2
-    frame_color = "#ffffff"
+    frame_color = "#ff00ff"
     
     font = TerminessTTF Nerd Font Mono Medium 15
     
@@ -68,7 +68,7 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "0x0-25-25"
+    geometry = "0x0-10-10"
 
     #CORNER RADIUS
     #use 0 for non round corners
@@ -81,7 +81,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 40
+    transparency = 33
     
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -127,10 +127,10 @@
     
     # Padding between text and separator.
     # padding = 8
-    padding = 8
+    padding = 5
     
     # Horizontal padding.
-    horizontal_padding = 10
+    horizontal_padding = 5
     
     # Define a color for the separator.
     # possible values are:
@@ -185,12 +185,12 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#006080"
+    background = "#990099"
     foreground = "#ffffff"
     timeout = 5
 
 [urgency_normal]
-    background = "#006080"
+    background = "#990099"
     foreground = "#ffffff"
     timeout = 5
 
