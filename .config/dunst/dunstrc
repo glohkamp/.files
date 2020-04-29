@@ -30,7 +30,7 @@
     sort = yes
     
     # Show how many messages are currently hidden (because of geometry).
-    indicate_hidden = yes
+    indicate_hidden = no
     
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -50,7 +50,7 @@
     
     # Split notifications into multiple lines if they don't fit into
     # geometry.
-    word_wrap = yes
+    word_wrap = no
     
     # Ignore newlines '\n' in notifications.
     ignore_newline = no
@@ -68,7 +68,7 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "0x0-10-10"
+    geometry = "250x0+833-12"
 
     #CORNER RADIUS
     #use 0 for non round corners
@@ -76,7 +76,7 @@
     
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = yes
+    shrink = no
     
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
@@ -123,11 +123,11 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 1
+    separator_height = 2
     
     # Padding between text and separator.
     # padding = 8
-    padding = 5
+    padding = 3
     
     # Horizontal padding.
     horizontal_padding = 5
@@ -138,7 +138,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = #263238
+    separator_color = #ff00ff
     
     # Print a notification on startup.
     # This is mainly for error detection, since dbus (re-)starts dunst
