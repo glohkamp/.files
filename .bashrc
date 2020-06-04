@@ -142,3 +142,6 @@ export VISUAL=nano;
 export EDITOR=nano;
 
 alias config='/usr/bin/git --git-dir=/home/konyption/.cfg/ --work-tree=/home/konyption'
+alias matrix='unimatrix -n -s 90 -l o -c magenta'
+alias cp='cp -r'
+alias r='rm -I'
