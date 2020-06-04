@@ -231,7 +231,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym Mod1+Escape exec --no-startup-id blurlock
+bindsym $alt+Escape exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/bin/nvidia-settings --assign=CurrentMetaMode="1920x1080_144"
