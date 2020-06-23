@@ -9,6 +9,9 @@ set $alt Mod1
 default_border pixel 0
 default_floating_border none
 
+for_window [class=^.*"] border pixel 0
+for_window [title=^.*"] border pixel 0
+
 # Hide borders
 hide_edge_borders none
 
@@ -26,7 +29,7 @@ font pango:monospace 12
 floating_modifier Mod1
 
 # start a terminal
-bindsym $mod+t exec xfce4-terminal
+bindsym $mod+t exec xfce4-terminal --disable-server
 
 # kill focused window
 bindsym $mod+Shift+q kill
