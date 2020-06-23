@@ -7,7 +7,10 @@ set $alt Mod1
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 0
-default_floating_border none
+default_floating_border pixel 0
+new_window pixel 0
+new_float pixel 0
+border_radius 9
 
 for_window [class=^.*"] border pixel 0
 for_window [title=^.*"] border pixel 0
@@ -26,7 +29,7 @@ bindsym $mod+n border normal
 font pango:monospace 12
 
 # Use Mouse+$mod to drag floating windows
-floating_modifier Mod1
+floating_modifier $alt
 
 # start a terminal
 bindsym $mod+t exec xfce4-terminal --disable-server
@@ -51,9 +54,6 @@ bindsym $mod+Ctrl+m exec pavucontrol
 ################################################################################################
 
 # Start Applications
-bindsym $mod+Shift+F3 exec pcmanfm_pkexec
-bindsym $mod+F5 exec xfce4-terminal -e 'mocp'
-#bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b 
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
@@ -165,35 +165,35 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # assign [class="Skype"] $ws5
 
 # Open specific applications in floating mode
-for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="calamares"] floating enable border normal
+for_window [title="alsamixer"] floating enable border pixel 0
+for_window [class="calamares"] floating enable border pixel 0
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="fpakman"] floating enable
-for_window [class="GParted"] floating enable border normal
-for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="GParted"] floating enable border pixel 0
+for_window [class="Lxappearance"] floating enable sticky enable border pixel 0
 for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Nitrogen"] floating enable sticky enable border pixel 0
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [class="Simple-scan"] floating enable border normal
-for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Timeset-gui"] floating enable border normal
-for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="qt5ct"] floating enable sticky enable border pixel 0
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border pixel 0
+for_window [class="Simple-scan"] floating enable border pixel 0
+for_window [class="(?i)System-config-printer.py"] floating enable border pixel 0
+for_window [class="Timeset-gui"] floating enable border pixel 0
+for_window [class="(?i)virtualbox"] floating enable border pixel 0
 for_window [class="Xfburn"] floating enable
 #steam windows
-for_window [class="Steam" title="Friends"] floating enable
-for_window [class="Steam" title="Steam - News"] floating enable
-for_window [class="Steam" title=".* - Chat"] floating enable
-for_window [class="Steam" title="Settings"] floating enable
-for_window [class="Steam" title=".* - event started"] floating enable
-for_window [class="Steam" title=".* CD key"] floating enable
-for_window [class="Steam" title="Steam - Self Updater"] floating enable
-for_window [class="Steam" title="Screenshot Uploader"] floating enable
-for_window [class="Steam" title="Steam Guard - Computer Authorization Required"] floating enable
+for_window [class="Steam" title="Friends"] floating enable border pixel 0
+for_window [class="Steam" title="Steam - News"] floating enable border pixel 0
+for_window [class="Steam" title=".* - Chat"] floating enable border pixel 0
+for_window [class="Steam" title="Settings"] floating enable border pixel 0
+for_window [class="Steam" title=".* - event started"] floating enable border pixel 0
+for_window [class="Steam" title=".* CD key"] floating enable border pixel 0
+for_window [class="Steam" title="Steam - Self Updater"] floating enable border pixel 0
+for_window [class="Steam" title="Screenshot Uploader"] floating enable border pixel 0
+for_window [class="Steam" title="Steam Guard - Computer Authorization Required"] floating enable border pixel 0
 
 
 # switch to workspace with urgent window automatically
@@ -285,10 +285,6 @@ bar {
 	}
 }
 
-# Border Radius
-
-border_radius 7
-
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
   client.focused          #ff00ff #ff00ff #80FFF9 #33ccff
@@ -305,7 +301,7 @@ border_radius 7
 
 # Set inner/outer gaps
 gaps inner 15
-gaps outer -2
+gaps outer 10
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -317,7 +313,7 @@ smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
+smart_borders no_gaps
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
