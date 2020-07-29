@@ -138,6 +138,16 @@ ex ()
   fi
 }
 
+##CHANGE TTY COLORS
+
+if [ "$TERM" = "linux" ]; then
+    _SEDCMD='s/.*\*color\([0-9]\{1,\}\).*#\([0-9a-fA-F]\{6\}\).*/\1 \2/p'
+    for i in $(sed -n "$_SEDCMD" $HOME/.cache/wal/colors.Xresources | awk '$1 < 16 {printf "\\e]P%X%s", $1, $2}'); do
+        echo -en "$i"
+    done
+    clear
+fi
+
 export VISUAL=nano;
 export EDITOR=nano;
 
@@ -145,3 +155,4 @@ alias config='/usr/bin/git --git-dir=/home/konyption/.cfg/ --work-tree=/home/kon
 alias matrix='unimatrix -n -s 90 -l o -c magenta'
 alias cp='cp -r'
 alias r='rm -I'
+alias doppler='~/Documents/scripts/doppler'
