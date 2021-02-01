@@ -233,7 +233,7 @@ bindsym $alt+Escape exec --no-startup-id blurlock
 # Autostart applications
 exec --no-startup-id /usr/bin/nvidia-settings --assign=CurrentMetaMode="1920x1080_144"
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id wal -R -a 80; sleep 1;  picom -b; conky --config=/usr/share/conky/conky.conf
+exec --no-startup-id wal -i Pictures/wallpaper/ -a 90; sleep 1;  picom -b; conky --config=/usr/share/conky/conky.conf
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id fix_xcursor
