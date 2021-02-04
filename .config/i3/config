@@ -1,5 +1,6 @@
-# i3 config file (v4)
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+##################################################
+#################### i3 config ####################
+###################################################
 
 # Set mod keys (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -42,7 +43,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Num_Lock exec --no-startup-id dmenu_recency -nb '#990099' -sb '#ff00ff' -nf '#ff00ff' -sf '#ffffff' -fn 'TerminessTTF Nerd Font Mono-15'
 
 # shut down computer
-bindsym $mod+Escape exec shutdown now
+bindsym $mod+Delete exec shutdown now
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -99,18 +100,8 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# toggle sticky
-bindsym $mod+Shift+s sticky toggle
-
 # focus the parent container
 bindsym $mod+a focus parent
-
-# move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
 
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
@@ -160,32 +151,24 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
+# assign [class="Wine"] $ws1
+# assign [class="Discord"] $ws2
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 0
 for_window [class="calamares"] floating enable border pixel 0
-for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="fpakman"] floating enable
 for_window [class="GParted"] floating enable border pixel 0
 for_window [class="Lxappearance"] floating enable sticky enable border pixel 0
-for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="Nitrogen"] floating enable sticky enable border pixel 0
-for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border pixel 0
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border pixel 0
-for_window [class="Simple-scan"] floating enable border pixel 0
-for_window [class="(?i)System-config-printer.py"] floating enable border pixel 0
-for_window [class="Timeset-gui"] floating enable border pixel 0
 for_window [class="(?i)virtualbox"] floating enable border pixel 0
 for_window [class="Xfburn"] floating enable
-#steam windows
+
+# Steam windows
 for_window [class="Steam" title="Friends"] floating enable border pixel 0
 for_window [class="Steam" title="Steam - News"] floating enable border pixel 0
 for_window [class="Steam" title=".* - Chat"] floating enable border pixel 0
@@ -196,7 +179,6 @@ for_window [class="Steam" title="Steam - Self Updater"] floating enable border p
 for_window [class="Steam" title="Screenshot Uploader"] floating enable border pixel 0
 for_window [class="Steam" title="Steam Guard - Computer Authorization Required"] floating enable border pixel 0
 
-
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
@@ -205,9 +187,6 @@ bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
