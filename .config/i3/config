@@ -11,7 +11,7 @@ default_border pixel 0
 default_floating_border pixel 0
 new_window pixel 0
 new_float pixel 0
-border_radius 9
+#border_radius 9
 
 for_window [class=^.*"] border pixel 0
 for_window [title=^.*"] border pixel 0
@@ -67,7 +67,7 @@ bindsym $mod+Ctrl+m exec pavucontrol
 ################################################################################################
 
 # Start Applications
-bindsym $mod+Ctrl+t exec --no-startup-id picom -b 
+bindsym $mod+Ctrl+t exec --no-startup-id picom -b --experimental-backends 
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
@@ -214,7 +214,7 @@ bindsym $alt+Escape exec --no-startup-id blurlock
 # Autostart applications
 exec --no-startup-id /usr/bin/nvidia-settings --assign=CurrentMetaMode="1920x1080_144"
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id wal -i Pictures/wallpaper/ -a 90; sleep 1;  picom -b; conky --config=/usr/share/conky/conky.conf
+exec --no-startup-id wal -i Pictures/wallpaper/ -a 90; sleep 1;  picom -b --experimental-backends; conky --config=/usr/share/conky/conky.conf
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id fix_xcursor
