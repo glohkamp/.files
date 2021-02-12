@@ -45,9 +45,8 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
+enable-click = false
 
 label-mode-padding = 1
 label-mode-foreground = #000
@@ -83,8 +82,6 @@ ws-icon-2 = 3;♜
 ws-icon-3 = 4;♝
 ws-icon-4 = 5;♞
 ws-icon-default = 
-
-handle-events = false
 
 [settings]
 screenchange-reload = true
