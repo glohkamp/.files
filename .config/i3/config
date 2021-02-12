@@ -11,7 +11,6 @@ default_border pixel 0
 default_floating_border pixel 0
 new_window pixel 0
 new_float pixel 0
-#border_radius 9
 
 for_window [class=^.*"] border pixel 0
 for_window [title=^.*"] border pixel 0
@@ -51,7 +50,7 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
 # start program launcher
-bindsym $mod+Num_Lock exec --no-startup-id dmenu_recency -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg" -fn "TerminessTTF Nerd Font Mono:size=15"
+bindsym $mod+Num_Lock exec --no-startup-id dmenu_recency -b -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg" -fn "TerminessTTF Nerd Font Mono:size=15"
 
 # shut down computer
 bindsym $mod+Delete exec shutdown now
@@ -175,9 +174,9 @@ for_window [class="(?i)virtualbox"] floating enable border pixel 0
 for_window [class="Xfburn"] floating enable
 
 # Steam windows
-for_window [class="Steam" title="Friends"] floating enable border pixel 0
+for_window [class="Steam" title="Friends List"] floating enable border pixel 0
 for_window [class="Steam" title="Steam - News"] floating enable border pixel 0
-for_window [class="Steam" title=".* - Chat"] floating enable border pixel 0
+for_window [class="Steam" title="Chat"] floating enable border pixel 0
 for_window [class="Steam" title="Settings"] floating enable border pixel 0
 for_window [class="Steam" title=".* - event started"] floating enable border pixel 0
 for_window [class="Steam" title=".* CD key"] floating enable border pixel 0
@@ -209,48 +208,30 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $alt+Escape exec --no-startup-id blurlock
+bindsym $alt+Escape exec --no-startup-id i3lock
 
 # Autostart applications
 exec --no-startup-id /usr/bin/nvidia-settings --assign=CurrentMetaMode="1920x1080_144"
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id wal -i Pictures/wallpaper/ -a 90; sleep 1;  picom -b --experimental-backends; conky --config=/usr/share/conky/conky.conf
-exec --no-startup-id nm-applet
+exec --no-startup-id wal -i Pictures/wallpaper/ -a 80; sleep 1;  picom -b --experimental-backends
+#exec --no-startup-id conky --config=/usr/share/conky/conky.conf
+exec --no-startup-id /home/konyption/.config/polybar/launch.sh
+#exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id /usr/bin/nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
 exec --no-startup-id /usr/bin/xset s off
 exec --no-startup-id /usr/bin/xset -dpms
 
-#Hide System Tray
-bar {
-	mode invisible
-	workspace_buttons no
-	i3bar_command i3bar --transparency
-	colors {
-		background #00000000
-		statusline #00000000
-		separator #00000000
-	}
-}
-
-# Theme colors
-# class                   border  backgr. text    indic.   child_border
-  client.focused          #ff00ff #ff00ff #80FFF9 #33ccff
-  client.focused_inactive #4d00d4d #4d004d #1ABC9C #006080
-  client.unfocused        #990099 #990099 #1ABC9C #006080
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
-
-  client.background       #FF000000
-
 #############################
 ### settings for i3-gaps: ###
 #############################
 
 # Set inner/outer gaps
-gaps inner 15
-gaps outer 10
+gaps inner 10
+#gaps top 25
+gaps bottom 15
+gaps top 35
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
