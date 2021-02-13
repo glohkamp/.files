@@ -37,8 +37,8 @@ bindsym $mod+t exec urxvt
 # kill focused window
 bindsym $mod+Shift+q kill
 
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $fg i3wm.color0 #f0f0f0
+set_from_resource $bg i3wm.color7 #f0f0f0
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
@@ -214,9 +214,7 @@ bindsym $alt+Escape exec --no-startup-id i3lock
 exec --no-startup-id /usr/bin/nvidia-settings --assign=CurrentMetaMode="1920x1080_144"
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id wal -i Pictures/wallpaper/ -a 80; sleep 1;  picom -b --experimental-backends
-#exec --no-startup-id conky --config=/usr/share/conky/conky.conf
 exec --no-startup-id /home/konyption/.config/polybar/launch.sh
-#exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id /usr/bin/nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
@@ -241,7 +239,6 @@ bar {
 
 # Set inner/outer gaps
 gaps inner 10
-#gaps top 25
 gaps bottom 15
 gaps top 35
 
