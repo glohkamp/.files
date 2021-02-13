@@ -223,6 +223,18 @@ exec --no-startup-id /usr/bin/nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
 exec --no-startup-id /usr/bin/xset s off
 exec --no-startup-id /usr/bin/xset -dpms
 
+#Hide System Tray
+bar {
+	mode invisible
+	workspace_buttons no
+	i3bar_command i3bar --transparency
+	colors {
+		background #00000000
+		statusline #00000000
+		separator #00000000
+	}
+}
+
 #############################
 ### settings for i3-gaps: ###
 #############################
