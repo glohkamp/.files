@@ -50,7 +50,7 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
 # start program launcher
-bindsym $mod+Num_Lock exec --no-startup-id dmenu_recency -b -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg" -fn "TerminessTTF Nerd Font Mono:size=15"
+bindsym $mod+Num_Lock exec --no-startup-id dmenu_recency -l 15 -w 400 -x 10 -y 45 -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg" -fn "TerminessTTF Nerd Font Mono:size=15"
 
 # shut down computer
 bindsym $mod+Delete exec shutdown now
