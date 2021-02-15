@@ -76,6 +76,8 @@ bindsym $mod+d exec discord-canary --disable-font-subpixel-positioning
 bindsym $mod+c exec chromium --disable-font-subpixel-positioning
 bindsym $mod+g exec lutris
 bindsym $mod+s exec steam
+bindsym $mod+z exec ./Documents/scripts/dabberer
+bindsym $mod+Shift+z exec killall dabberer
 
 # change focus
 bindsym $mod+j focus left
