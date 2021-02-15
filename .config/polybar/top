@@ -36,7 +36,7 @@ font-1 = "TerminessTTF Nerd Font Mono:style=Medium:size=20;4"
 #font-3 = "FontAwesome 5 Brands:size=25;2"
 
 modules-left = eth wlan
-modules-center = date
+modules-center = date time
 modules-right = pulseaudio battery temperature
 
 tray-position = none
@@ -99,28 +99,6 @@ label-urgent-padding = 2
 
 handle-events = false
 
-[module/wlan]
-type = internal/network
-interface = net1
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
 [module/eth]
 type = internal/network
 interface = enp4s0
@@ -128,14 +106,14 @@ interval = 3.0
 
 #format-connected-underline = #55aa55
 format-connected-prefix = %{T2}
-format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix-foreground = ${colors.primary}
 label-connected = %{T1} %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+;label-disconnected-foreground = ${colors.primary}
 
 [module/date]
 type = internal/date
@@ -147,20 +125,27 @@ date = %m-%d
 time = %H:%M
 #time-alt = %H:%M:%S
 
-#format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-#format-underline = ${colors.secondary}
+format-prefix = %{T2} 
+format-prefix-foreground = ${colors.primary}
+format-suffix = %{T1} %{T2}
+format-suffix-foreground = ${colors.primary}
 
-label = %date% %{T2}  %{T1   } %time%
+label =  %{T1} %date%    %time%
+label-foreground = ${colors.foreground}
+
+[module/time]
+time = %H:%M
+label = %{T1}%time% {%T2} %{Fcolors.primary}%{F-}
+
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume =<bar-volume> <label-volume> 
 label-volume = %{T2} 
-label-volume-foreground = ${root.foreground}
+label-volume-foreground = ${colors.primary}
 
 label-muted = %{T2}
-label-muted-foreground = ${colors.foreground}
+label-muted-foreground = ${colors.primary}
 
 bar-volume-width = 10
 bar-volume-foreground-0 = ${colors.secondary}
