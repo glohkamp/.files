@@ -150,9 +150,13 @@ fi
 
 export VISUAL=nano;
 export EDITOR=nano;
+export __GL_SHADER_DISK_CACHE_SIZE=100000000000
+export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
 
 alias config='/usr/bin/git --git-dir=/home/konyption/.cfg/ --work-tree=/home/konyption'
 alias matrix='unimatrix -n -s 90 -l o -c magenta'
 alias cp='cp -r'
 alias r='rm -I'
 alias doppler='~/Documents/scripts/doppler'
+alias dabber='~/Documents/scripts/dabber'
+alias waldo='wal -i Pictures/wallpaper/ -a 80 -o ".config/dunst/launchdunst.sh"'
