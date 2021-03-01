@@ -69,12 +69,7 @@ if ${use_color} ; then
 		fi
 	fi
 
-	if [[ ${EUID} == 0 ]] ; then
-		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
-	else
-		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
-	fi
-
+	PS1='\e[2;32m\e[0m \e[0;31m\w\e[0m \e[1;32m\e[0m '
 	alias ls='ls --color=auto'
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
@@ -82,9 +77,9 @@ if ${use_color} ; then
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
-		PS1='\u@\h \W \$ '
+		PS1=' \W  '
 	else
-		PS1='\u@\h \w \$ '
+		PS1=' \w  '
 	fi
 fi
 
@@ -159,4 +154,4 @@ alias cp='cp -r'
 alias r='rm -I'
 alias doppler='~/Documents/scripts/doppler'
 alias dabber='~/Documents/scripts/dabber'
-alias waldo='wal -i Pictures/wallpaper/ -a 80 -o ".config/dunst/launchdunst.sh"'
+alias waldo='wal -i ~/Pictures/wallpaper/ -a 80 -o ".config/dunst/launchdunst.sh"'
