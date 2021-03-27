@@ -223,6 +223,7 @@ exec_always --no-startup-id fix_xcursor
 exec --no-startup-id /usr/bin/nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
 exec --no-startup-id /usr/bin/xset s off
 exec --no-startup-id /usr/bin/xset -dpms
+exec --nostartup-id /usr/bin/openrgb -c 00FF00 --nodetect
 
 #Hide System Tray
 bar {
