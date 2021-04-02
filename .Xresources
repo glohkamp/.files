@@ -1,0 +1,3 @@
+URxvt.scrollBar: false
+URxvt.internalBorder: 15
+URxvt.font: xft:TerminessTTF Nerd Font Mono:size=15
