@@ -51,7 +51,7 @@ client.placeholder      $bg     $bg     $fg  $id       $bg
 client.background       $bg
 
 # start program launcher
-bindsym $mod+Num_Lock exec --no-startup-id dmenu_recency -l 15 -w 400 -x 10 -y 45 -nb "$fg" -nf "$bg" -sb "$id" -sf "$fg" -fn "TerminessTTF Nerd Font Mono:size=15"
+bindsym $mod+Num_Lock exec --no-startup-id rofi -show run
 
 # shut down computer
 bindsym $mod+Delete exec shutdown now
@@ -73,7 +73,7 @@ bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-bindsym $mod+d exec discord-canary --disable-font-subpixel-positioning
+bindsym $mod+d exec discord --disable-font-subpixel-positioning
 bindsym $mod+c exec chromium --disable-font-subpixel-positioning
 bindsym $mod+g exec lutris
 bindsym $mod+s exec steam
@@ -214,16 +214,17 @@ mode "resize" {
 bindsym $alt+Escape exec --no-startup-id i3lock
 
 # Autostart applications
-exec --no-startup-id /usr/bin/nvidia-settings --assign=CurrentMetaMode="1920x1080_144"
+#exec --no-startup-id /usr/bin/nvidia-settings --assign=CurrentMetaMode="1920x1080_144"
+exec --no-startup-id /usr/bin/xrandr --rate 144.00
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id wal -i Pictures/wallpaper/ -a 80 -o ".config/dunst/launchdunst.sh"; sleep 1;  picom -b --experimental-backends
 exec --no-startup-id /home/konyption/.config/polybar/launch.sh
 exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id fix_xcursor
-exec --no-startup-id /usr/bin/nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
+#exec --no-startup-id /usr/bin/nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
 exec --no-startup-id /usr/bin/xset s off
 exec --no-startup-id /usr/bin/xset -dpms
-exec --nostartup-id /usr/bin/openrgb -c 00FF00 --nodetect
+exec --nostartup-id /usr/bin/openrgb -c 00FF00
 
 #Hide System Tray
 bar {

@@ -54,6 +54,8 @@
     
     # Ignore newlines '\n' in notifications.
     ignore_newline = no
+
+	fullscreen = delay
  
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
@@ -117,7 +119,7 @@
     # The height of a single line.  If the height is smaller than the
     # font height, it will get raised to the font height.
     # This adds empty space above and under the text.
-    line_height = 0
+    line_height = 1
     
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -151,7 +153,7 @@
     browser = chromium
 
     # Align icons left/right/off
-    icon_position = left
+    icon_position = right
 
     # Paths to default icons.
     icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
@@ -225,6 +227,10 @@
     summary = "dabber"
     #script = ~/Documents/scripts/dabberer
 	urgency = low
+
+[pa-applet]
+    appname = *pa-applet*
+    format = ""
 	
 [ignore]
     # This notification will not be displayed
