@@ -79,6 +79,7 @@ bindsym $mod+g exec lutris
 bindsym $mod+s exec steam
 bindsym $mod+z exec ./Documents/scripts/dabberer
 bindsym $mod+Shift+z exec killall dabberer
+bindsym $mod+o exec --no-startup-id ./Documents/scripts/camtoggle
 
 # change focus
 bindsym $mod+j focus left
@@ -176,6 +177,8 @@ for_window [class="Qtconfig-qt4"] floating enable sticky enable border pixel 0
 for_window [class="(?i)virtualbox"] floating enable border pixel 0
 for_window [class="Xfburn"] floating enable
 
+for_window [title="video0 - mpv"] floating enable sticky enable border pixel 0
+
 # Steam windows
 for_window [class="Steam" title="Friends List"] floating enable border pixel 0
 for_window [class="Steam" title="Steam - News"] floating enable border pixel 0
@@ -186,6 +189,7 @@ for_window [class="Steam" title=".* CD key"] floating enable border pixel 0
 for_window [class="Steam" title="Steam - Self Updater"] floating enable border pixel 0
 for_window [class="Steam" title="Screenshot Uploader"] floating enable border pixel 0
 for_window [class="Steam" title="Steam Guard - Computer Authorization Required"] floating enable border pixel 0
+for_window [title="Origin"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
